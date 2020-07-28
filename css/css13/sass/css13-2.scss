@@ -1,0 +1,190 @@
+@import "mixin.scss";
+
+.g-bd {
+    background-color:$s-blue;
+}
+.g-hd {
+        @include fixed(0,auto);
+        @include wh(100%,auto);
+        @include row(center,space-between);
+        @include font(1.5rem,$s-f);
+        @include pdg(0.5rem,0.3rem,0.2rem,0.3rem);
+        background-color:$s-blue;
+    }
+.hd-btn-lf {
+    @include wh(2.5rem,2.5rem);
+    @include bg(25rem,50rem,-.1rem,-11.2rem);
+	@include none;
+}
+.hd-btn-rgt {
+    @include wh(2.5rem,2.5rem);
+    @include bg(25rem,50rem,0,-13.7rem);
+	@include none;
+}
+.main-audio {
+    @include fixed(3rem,auto);
+    @include wh(100%,3.5rem);
+	@include row(center,space-between);
+	background-color: $s-blue;
+}
+.audio-opa {
+    @include abs(0,0,0,0);
+    opacity: 0.6;  
+    background-color: $s-f;
+    z-index: -1;
+}
+.audio-content {
+    @include mg(0,0,0,3rem);
+    @include font(1.2rem,$s-black);
+}
+.audio-btn {
+    @include abs(0.3rem,0.3rem,auto,auto);
+	@include wh(3rem,3rem);
+    @include rds(1.5rem);
+    @include none;
+	background-color: $s-e;	
+}
+.audio-ico {
+    @include wh(3rem,3rem);
+    @include bg(24rem,50rem,0.9rem,-16.2rem);
+}
+audio {
+    @include abs(0,auto,auto,0);
+    @include wh(10rem,3rem);
+    opacity: 0;
+}
+.main-list {
+    @include fixed(6.49rem,auto);
+    @include wh(100%,3.5rem);
+	background-color: $s-blue;
+}
+.list-ico {
+    @include abs(auto,auto,auto,3rem);
+    @include wh(1rem,1rem);
+    @include bg(auto,auto,0,-22rem);
+}
+.list-content {
+    @include abs(0.8rem,auto,auto,3.2rem);
+    @include font(1.1rem,$s-f);
+}
+.main-demo {
+    @include abs(auto,auto,auto,auto);
+    @include wh(100%,auto);
+    @include pdg(9rem,0,8rem,0);
+    z-index: -1; 
+}
+.demo {
+    position: relative;
+    float: left;
+    text-align: center;
+    @include wh(21%,auto);
+    @include mg(5.7%,5.7%,5.7%,5.7%);
+	border: 0.2rem solid $s-f;	
+}
+.demo-name {
+    @include font(0.7rem,$s-black);
+    @include pdg(18%,0,18%,0);
+    background-color: $s-e;
+}
+.demo-mub {
+    @include font(1rem,$s-f);
+	background-color: $s-bl2;
+}
+.demo-ico {
+    @include abs(auto,auto,auto,-4%);
+    @include wh(110%,40%);
+    @include pdg(0.8rem,0,0,0);
+	display: none;
+}
+.ico1 {
+    @include abs(auto,auto,auto,-4%);
+    @include wh(24%,100%);
+	background: url("img/icon_1.png") no-repeat;
+	background-size: 100% ;
+}
+.ico2 {
+    @include abs(auto,auto,auto,23.5%);
+    @include wh(24%,100%);
+	background: url("img/icon_2.png") no-repeat; 
+	background-size: 100% ;
+}
+.ico3 {
+    @include abs(auto,auto,auto,51.5%);
+    @include wh(24%,100%);
+	background: url("img/icon_3.png") no-repeat;
+	background-size: 100% ; 
+}
+.ico4 {
+    @include abs(auto,auto,auto,79%);
+    @include wh(25%,100%);
+	background: url("img/icon_4.png") no-repeat;
+	background-size: 100% ;
+}
+.demo:hover .demo-ico {
+	display: block;
+}
+@media screen and (max-width: 370px) {
+    .demo-mub {
+        @include font(0.5rem,$s-f);
+        @include pdg(5%,5%,5%,5%);
+    } 
+    .demo {
+        @include mg(5.3%,5.3%,5.3%,5.3%);
+        border: 0.1rem solid $s-f;	
+    }
+    .audio-content {
+        @include font(1rem,$s-black);
+    }
+}
+@media screen and (min-width: 370px) and (max-width: 550px) {
+    .demo-name {
+        @include font(1.3rem,$s-black);
+        @include pdg(18%,0,18%,0); 
+    }
+    .demo {
+        @include mg(5.3%,5.3%,5.3%,5.3%);
+	    border: 0.2rem solid $s-f;	
+    }
+    .audio-content {
+        @include font(1rem,$s-black);
+    }
+}
+ @media screen and (min-width: 550px) and (max-width: 700px) {
+    .demo-name {
+        @include font(2rem,$s-black);
+        @include pdg(20%,0,20%,0);
+   }
+    .demo {
+        @include mg(5.3%,5.3%,5.3%,5.3%);
+	    border: 0.2rem solid $s-f;	
+   }
+}
+ @media screen and (min-width: 700px) {
+    .demo-name {
+        @include font(3rem,$s-black);
+        @include pdg(24%,0,24%,0); 
+   }
+    .demo-mub {
+        @include font(2rem,$s-f);
+        @include pdg(5%,5%,5%,5%);
+   } 
+    .audio-content {
+        @include font(2rem,$s-black);
+   }
+    .list-content {
+        @include font(2rem,$s-f);
+   }
+}
+.g-ft {
+    @include fixed(auto,0);
+    @include wh(100%,7rem);
+    @include row(center,center);
+	background-color: $s-blue;	
+}
+.g-ft a {
+     @include row(center,center);
+    @include wh(80%,5rem);
+    @include none;
+    @include font(3rem,$s-f);
+    background-color: $s-e;
+} 

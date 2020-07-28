@@ -1,0 +1,109 @@
+@import "mixin.scss";
+
+/*顶栏 */
+.hd-top {
+    @include rel;
+    @include font(0.8rem,$g);
+    @include pdg( 0,10%,0,10%);
+    @include row(center,space-between);
+    background: $f;
+}
+.top-rgt {
+    @include wh(5rem,1.5rem);
+    @include bg("img/task8.png",57rem,66rem,0,0);
+}
+
+
+/* 自定义折叠导航 */
+
+.m-nav {
+    @include rel;
+    min-height: 3.4rem;
+    background: $g;
+}
+.nav-logo {
+    @include lef;
+    @include mg(0.4rem, 0, 0, 10%);
+    @include wh(7rem,2.5rem);
+    @include bg("img/task8.png",60rem,70rem,0,-47.4rem);
+}
+.nav-btn {
+    @include abs(auto,8px,auto,auto);
+    @include mg(8px ,auto ,8px, auto);
+    @include pdg(8px,10px,8px,8px);
+    @include none;
+    background-color: $g;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.nav-btn:hover {
+    background: $bl;
+}
+.nav-btn:hover .icon-bar {
+    background: $g;
+}
+.nav-btn .icon-bar {
+    display: block;
+    @include mg(4px, 0, 4px, 0);
+    @include wh(22px,1.5px);
+    @include rds(1px);
+    background: $bl;
+}
+.nav-ul {
+    @include n-b(none);
+}
+.nav-ul li {
+    @include pdg( 1.2rem,0,1.2rem,1rem);
+}
+.nav-ul li a {
+    @include pdg( 1rem,0.6rem,1rem,0.6rem);
+    color: $f;
+    @include none;
+}
+/* 隐藏复选框 */
+#nav-toggler {
+   @include n-b(none);
+}
+/* 复选框事件样式 */
+#nav-toggler:checked~.nav-ul{
+    @include wh(100%,auto);
+    @include col(center,0);
+    background: $g;
+    transition: 0.3s ease-out;
+}
+#nav-toggler:checked~.nav-ul li {
+    @include pdg(0,0,0,0);
+}
+#nav-toggler:checked~.nav-ul li a {
+    @include n-b(inline-block);
+    @include wh(100%,auto);
+    @include none;
+    text-align: center;
+}
+/* 屏幕768px断点样式定义 */
+@media (min-width: 769px){
+  .nav-btn {
+    @include n-b(none);
+  }
+  .nav-ul {
+    @include n-b(block);
+    @include mg(auto,10%,auto,auto);
+    @include row(center,flex-end);
+  }
+  .nav-ul li a:hover  {  
+    @include none;
+    border-bottom: 0.2rem solid $f;
+  }
+}
+@media (max-width: 767px){
+    .nav-ul li {
+        width: 100%;
+        @include pdg(1rem,0,1rem,0);
+    }
+    .nav-ul li a {
+        @include pdg(1rem,0,1rem,0);
+    }
+    .nav-ul li a:hover  {
+        background: $rgb;
+    }
+}

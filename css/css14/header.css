@@ -1,0 +1,128 @@
+/*顶栏 */
+.hd-top {
+    position: relative;
+    height: 2rem;
+    font-size: 0.8rem;
+	  color: #40ca92;
+    background: #fff;
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-rgt {
+	  width:5rem;
+	  height: 1.5rem;
+	  background: url("task8.png") no-repeat 0 0;
+	  background-size: 57rem 66rem;
+}
+
+
+
+
+
+
+
+/* 自定义折叠导航 */
+
+.m-nav {
+    position: relative;
+    min-height: 3.4rem;
+    background: #40ca92;
+}
+.nav-logo {
+    float: left;
+    margin:0.4rem 0 0 10%;
+    width:7rem;
+    height: 2.5rem;
+    background: url("task8.png") no-repeat 0 -47.4rem;
+    background-size: 60rem 70rem;
+}
+.nav-btn {
+    position: absolute;
+    right: 8px;
+    padding: 8px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: #47d197;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: 0;
+}
+.nav-btn:hover {
+    background: #166b47;
+}
+.nav-btn .icon-bar {
+    display: block;
+    margin: 4px 0;
+    width: 22px;
+    height: 1.5px;
+    border-radius: 1px;
+    background: #338f68;
+}
+.nav-ul {
+    display: none;
+}
+.nav-ul li {
+    padding-left: 1rem;
+    padding: 1.2rem 0;
+}
+.nav-ul li a {
+    line-height: 1rem;
+    padding: 1rem 0.6rem;
+    color: #fff;
+    text-decoration: none;
+}
+.nav-ul li a:hover  {
+    background: rgba(231, 231, 231, 0.4);
+}
+/* 隐藏复选框 */
+#nav-toggler {
+    display:none;
+}
+/* 复选框事件样式 */
+#nav-toggler:checked~.nav-ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #40ca92;
+    transition: 0.3s ease-out;
+}
+#nav-toggler:checked~.nav-ul li {
+    padding: 0;
+}
+#nav-toggler:checked~.nav-ul li a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border: none;
+}
+/* 屏幕768px断点样式定义 */
+@media (min-width: 768px){
+  .nav-btn {
+      display: none;
+  }
+  .nav-ul {
+      display: block;
+      margin-right: 10%;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: flex-end;
+  }
+  .nav-ul li a:hover  {
+    border-bottom: 0.2rem solid #fff;
+    background: none;
+  }
+}
+@media (max-width: 767px){
+    .nav-ul li {
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .nav-ul li a {
+        padding: 1rem 0;
+    }
+}
