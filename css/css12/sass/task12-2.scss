@@ -1,0 +1,210 @@
+@import "mixin.scss";
+
+body,ul {
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: fixed;
+    top: 0;
+    @include row($center,$center);
+    @include wh($width,$height);
+    background: $blue;
+    div {
+        @include row($center,$center);
+        .bin-lf {
+            @include mg(0,-0.3rem,0,0);
+            @include wh(5rem,2rem);
+            @include font($font,$color);
+            @include none;
+            border-radius: 0.3rem;
+            background-color: $blue-s;
+        }
+        .bin-rgt {
+            @extend .bin-lf;
+            @include mg(0,0,0,-0.3rem);
+            @include font($font,$blue);
+            background-color: $color;
+        }
+    }
+    .bin-ico {
+        position: absolute;
+        right: $right*.5;
+        @include wh(1.86rem,1.86rem);
+        @include none;
+        @include back(-1.686rem,-1.686rem);
+    }
+}
+.select {
+    position: fixed;
+    top: $height;
+    width: $width;
+    border-bottom: $bord $solid $gray;
+    background-color: $color;
+    .ul {
+        @include row($center,$center);
+        @include none;
+        height: $height;
+        .li {
+            position: relative;
+            flex: 1;
+            @extend .ul;
+            @include font($font,$gray);
+            border-left: $bord $solid $gray;
+            border-right: $bord $solid $gray;
+            border-image: linear-gradient(#fafbfb, $gray, #fafbfb)1 1 1;
+            span {
+                @include row($center,$center);
+                flex: 1;
+            }
+            div {
+                @include wh(0.6rem,0.6rem);
+                @include pdg(0,0.6rem,0,0);
+                @include back(0,-5.4rem);
+            }
+            .ul-none {
+                position: absolute;
+                top: $height;
+                display: none;
+                min-width: $width;
+                .li-none {
+                    @include none;
+                    @include pdg($top,0,$bottom,0);
+	                border: 0.03rem solid $gray;
+                    text-align: center;
+                }
+            } 
+        }
+    }
+    .li:hover .ul-none{
+        display: block;
+        color: $black;
+        background-color: $blue;
+    }
+    .ul-none:hover .li-none {
+        background-color: $blue-s;
+        font-weight: bold;
+    }
+}
+main {
+    @include col(0,$s-b);
+    @include pdg($height*2,0,$height*1.2,0);
+    .main {
+        @include row($center,$s-b);
+        border-bottom: $bord $solid $gray;
+        .main-lf {
+            @include col(0,$s-a);
+            .main-lf-top {
+                @include row($center,$f-s);
+                @include pdg(0.3rem,0,0.3rem,0);
+                .lf-top-ico {
+                    @include back(-1.74rem,-3.5rem);
+                    @include wh(1.2rem,1.1rem);
+                    @include mg(0,0,0,0.4rem);
+                }
+                .lf-top-day {
+                    @include font($font,$gray);
+                    @include pdg(0.3rem,0.4rem,0.3rem,0.4rem);
+                }
+            }
+            .main-lf-center {
+                display: block;
+                @include font($font,$black);
+                @include mg(0,0,0,2rem);
+                @include pdg(0.3rem,0,0.3rem,0);
+            }
+            .main-lf-bottom {
+                @include row($center,$f-s);
+                @include pdg(0.3rem,0,0.3rem,0);
+                .lf-bottom-ico {
+                    @include wh(1.2rem,1rem);
+                    @include mg(0,0,0,0.4rem);
+                    @include back(0.2rem,-3.5rem);
+                }
+                .lf-bottom-content {
+                    @include font($font,$gray);
+                    @include pdg(0.3rem,0.4rem,0.3rem,0.4rem); 
+                }
+            }
+            .main-lf-center:hover {width:auto;}
+            @media screen and (max-width: 400px) {
+                .main-lf-center {
+                    width: 8rem;
+                    @include overflow;
+                }    
+            }
+        }    
+        .main-rgt {
+            @include font($font,$red);
+        }
+        .main-rgt-demo {
+            @include font(1.3rem,$blue);
+            @include pdg(0,0.4rem,0,0);
+        }        
+    }
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    @include row($center,$center);
+    @include wh($width,$height*1.2);
+    background-color: $gray-s;
+    .ft-lf{
+        flex: 3;
+        background-color: $gray-s;
+        @include row($center,$f-e);
+        a {
+            @include wh(3rem,3rem);
+            @include col($center,$center);
+            background-color: $gray-s;
+            @include none;
+            .lf-ico {
+                @include back(0,0); 
+                @include wh(1.86rem,1.86rem);
+            }
+            .lf-content {
+                @include font($font*.7,$blue);
+            }
+        }
+    }
+    .ft-center {
+        flex: 4;
+        background-color: $gray-s;
+        @include row($center,$center);
+        button {
+            @include row($center,$center);
+            @include wh(3.15rem,3.15rem);
+            background-color: $blue;
+            border-radius: 3rem;
+            @include none;
+            span {
+                @include back(.24rem,-1.7rem); 
+                @include wh(1.86rem,1.86rem);
+            }
+        }
+    }
+    .ft-rgt {
+        flex: 3;
+        background-color: $gray-s;
+        @include row($center,$f-s);
+        button {
+            @include wh(3rem,3rem);
+            @include col($center,$center);
+            background-color: $gray-s;
+            @include none;
+            .rgt-ico {
+                @include back(-1.75rem,0.06rem); 
+                @include wh(1.86rem,1.86rem);
+            }
+            .fgt-content {
+                @include font($font*.7,$gray);
+            }
+        }
+    }
+}
+
+
+
+
+
+

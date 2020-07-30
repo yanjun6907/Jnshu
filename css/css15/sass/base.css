@@ -1,0 +1,27 @@
+body{
+    line-height:1rem;
+    color:#fff;
+    font-family:arial;
+    font-size: 1rem;
+    background: rgba(162,162,162,0.12);
+}
+input,textarea,select{
+    font-size:1rem;   
+    font-family:arial;
+    font-family:inherit;
+}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,form,nav{
+    margin:0;
+    padding: 0;
+}
+h4,h5,h6{
+    font-size:1em;
+}
+ul,ol{
+    padding-left:0; 
+    padding-right: 0;
+    list-style-type:none;
+}
+/*image with no-border*/
+a img{border:0;}
+img{border:0;}

@@ -1,0 +1,84 @@
+$r: red;
+$b: black;
+$f: #fff;
+$e: #fda92e;
+$d: #dadada;
+$g: #40ca92;
+$bl: #166b47;
+$bl2:rgb(12, 88, 100);
+$a: #6d6c6c;
+$ag: rgb(238, 238, 238);
+$rgb: rgba(255,255,255,0.3);
+$rg:rgba(108,108,108,0.3);
+$a89: #8a8989;
+
+@mixin none {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    background-image: none;
+}
+@mixin rel {
+    position: relative;
+}
+@mixin fixed($top,$bottom) {
+    position: fixed;
+    top: $top;
+    bottom: $bottom;
+}
+@mixin abs($top,$right,$bottom,$left) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+@mixin rds($rds) {
+    border-radius: $rds;
+}
+@mixin pdg($top,$right,$bottom,$left) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-right: $right;
+    padding-left: $left;
+}
+@mixin mg($top,$right,$bottom,$left) {
+    margin-top: $top;
+    margin-left: $left;
+    margin-bottom: $bottom;
+    margin-right: $right;
+}
+@mixin row($center,$f-s) {
+    display: flex;
+    flex-flow: row;
+    align-items: $center;
+    justify-content: $f-s;
+}
+@mixin col($center,$f-s) {
+    display: flex;
+    flex-direction: column;
+    align-items: $center;
+    justify-content: $f-s;
+}
+@mixin font($font,$black) {
+    font-size: $font;
+    color: $black;
+}
+@mixin wh($width,$weight) {
+    width: $width;
+    height: $weight;
+}
+@mixin bg($q,$x,$y,$m,$n) {
+    background: url($q) no-repeat $m $n;
+    background-size: $x $y;
+}
+@mixin lef {
+    float: left;
+}
+@mixin ght {
+    float: right;
+}
+@mixin n-b($n) {
+    display: $n;
+}

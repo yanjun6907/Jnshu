@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">                 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://ianlunn.github.io/Hover/css/hover.css">
+    <link rel="stylesheet" type="text/css" href="sass/base.css">
+    <link rel="stylesheet" type="text/css" href="sass/header.css">
+    <link rel="stylesheet" type="text/css" href="sass/grid.css">
+    <link rel="stylesheet" type="text/css" href="sass/carousel.css">
+    <link rel="stylesheet" type="text/css" href="sass/task15.css">
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <title>首页</title>
+</head>
+<body>
+    <header>
+        <!-- 顶栏 -->
+        <div class="hd-top">
+                咨询电话 : 010-59478634
+            <span class="top-rgt"></span>
+        </div>
+        <!-- 折叠式导航 -->
+        <nav class="m-nav">
+            <a class="nav-logo" href="#"></a>
+            <label class="nav-btn" for="nav-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </label>
+            <input type="checkbox" id="nav-toggler">
+            <ul class="nav-ul">
+                <li><a  href="css15-1.html">首页 </a></li>
+                <li><a href="css15-3.html">职业</a></li>
+                <li><a href="css15-2.html">推荐</a></li>
+                <li><a href="#">关于</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <main>
+        <div class="con">
+            <div class="carouselContainer">        
+                <ul id="carousel">
+                    <li> 
+                        <span class=" caption-text1 bf">
+                            开启IT在线教育2.0时代
+                        </span><br/>
+                        <span class=" caption-text2">
+                            更快的成就自己
+                        </span> 
+                    </li>
+                    <li>      
+                        <span class=" caption-text1 bf">
+                            开启IT在线教育2.0时代
+                        </span><br/>
+                        <span class=" caption-text2">
+                            更快的成就自己
+                        </span>
+                    </li>
+                    <li>   
+                        <span class=" caption-text1 bf">
+                            开启IT在线教育2.0时代
+                        </span><br/>
+                        <span class=" caption-text2">
+                            更快的成就自己
+                        </span> 
+                    </li>
+                    <li>     
+                        <span class=" caption-text1 bf">
+                            开启IT在线教育2.0时代
+                        </span><br/>
+                        <span class=" caption-text2">
+                            更快的成就自己
+                        </span> 
+                    </li>
+                </ul>
+                <div class="arrowItems">
+                    <div class="left">‹</div>
+                    <div class="right">›</div>
+                </div>
+                <div class="dots">
+                    <div class="dot current"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        var picIndex = 0;
+        //为小圆点绑定鼠标经过事件
+        $('.dots div').mouseover(function(){
+            picIndex = $(this).index();
+            var left = -(picIndex) * 100 + '%';
+            //鼠标经过小圆点时，切换对应的图片
+            $('#carousel').stop().animate({'margin-left': left});
+            //当前小圆点为黑色，其他为白色
+            $(this).addClass('current').siblings().removeClass('current');
+        });
+        //右边按钮
+        $('.arrowItems .right').click(function(){
+            
+            if(picIndex == $('#carousel li').length - 1) {
+                picIndex = 0;
+                $('#carousel').css({'margin-left': '0px'});
+            }
+            picIndex ++;
+            var left = -(picIndex) * 100 + '%';
+            $('#carousel').stop().animate({'margin-left': left});
+    
+            //控制小圆点
+            if(picIndex == $('#carousel li').length - 1) {
+                $('.dots div').eq(0).addClass('current').siblings().removeClass('current');
+            }else {
+                $('.dots div').eq(picIndex).addClass('current').siblings().removeClass('current');
+            }
+        });
+        //左边按钮
+        $('.arrowItems .left').click(function(){
+            
+            if(picIndex == 0) {
+                picIndex = $('#carousel li').length - 1;
+                $('#carousel').css({'margin-left': -($('#carousel li').length - 1) * 100 + '%'});
+            }
+            picIndex --;
+            var left = -(picIndex) * 100 + '%';
+            $('#carousel').stop().animate({'margin-left': left});
+    
+            //控制小圆点
+            if(picIndex == $('#carousel li').length - 1) {
+                $('.dots div').eq(0).addClass('current').siblings().removeClass('current');
+            }else {
+                $('.dots div').eq(picIndex).addClass('current').siblings().removeClass('current');
+            }
+        });
+        </script>
+        <div class="container le1">
+            <div class="row" >
+                <div class="col-lg-3 col-md-6 fristrow cer">
+                    <img src="sass/img/task8-1.png">
+                    <h5>高校</h5>
+                    <p>
+                        将五到七年的成长时间，缩短到一年到三年。
+                    </p> 
+                </div>
+                <div class="col-lg-3 col-md-6 fristrow cer">
+                    <img src="sass/img/task8-2.png">            
+                    <h5>规范</h5>
+                    <p>
+                        标准的实战教程，不会走弯路
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 fristrow cer">
+                    <img src="sass/img/task8-3.png">
+                    <h5>人脉</h5>
+                    <p>
+                        同班好友，同院学长，技术大师， 入学就混入职脉圈，为以后铺平 道路。
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-6 fristrow cer">
+                    <div  style="margin: 1rem 0 3rem 0;">
+                        <img src="sass/img/task8-4.png">
+                        <p>
+                           累计在线学习人数
+                        </p>
+                    </div>
+                    <div  style="margin: 0 0 1rem 0;">
+                        <img src="sass/img/task8-4.png">
+                        <p>
+                            学员已经找到满意工作
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="le2 cer">如何学习</div>
+        <div class="container">
+            <div class="row ">
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon-1"></div>
+                    <div class="col-radius bf">
+                        <span>1</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>2</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>3</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>4</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon-1"></div>
+                    <div class="col-radius bf">
+                        <span>5</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>6</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>7</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 row-seond">
+                    <div class="col-icon"></div>
+                    <div class="col-radius bf">
+                        <span>8</span> 
+                    </div>
+                    <div class="col-text">
+                        匹配你现在的个人情况 寻找适合自己的岗位
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="le2 cer">优秀学员展示</div>
+        <!-- 点击轮播渐变 -->
+        <div class="viewover">
+            <input type="radio" name="slid" id="p1" checked>
+            <label for="p1"></label>
+            <input type="radio" name="slid" id="p2">
+            <label for="p2"></label>
+            <input type="radio" name="slid" id="p3">
+            <label for="p3"></label>
+            <ul class="nowrap big">
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-5.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-6.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-7.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-8.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-5.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-6.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-7.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-8.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-5.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-6.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-7.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                       百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-8.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- 小屏显示 -->
+            <ul class="nowrap small">
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-6.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-7.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="container">
+                        <div class="row ">
+                            <div class=" col-lg-3 col-md-6">
+                                <div class="col-seound bf">
+                                    <img src="sass/img/task8-8.png">              
+                                    <h6>技术顾问：罗大佑</h6>
+                                    <p>
+                                        百度技术总监：互联网基础 服务领域，从事虚拟主机、 云服务器、域名。曾任新网 高级技术经理，负责技术研 发、团队管理与建设。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="le3 cer">战略合作企业</div>
+        <div id="effects" class="effects">
+            <div class="container">
+                <div class="row  justify-content-between bf">
+                    <div class="col-lg-2 col-md-12 hvr-glow row-four bf">
+                        <img src="sass/img/task8-9.png">
+                    </div>
+                    <div class="col-lg-2 col-md-12 hvr-glow row-four bf">
+                        <img src="sass/img/task8-10.png">
+                    </div>
+                    <div class="col-lg-2 col-md-12 hvr-glow row-four bf">
+                        <img src="sass/img/task8-11.png">  
+                    </div>
+                    <div class="col-lg-2 col-md-12 hvr-glow row-four bf">
+                        <img src="sass/img/task8-12.png">  
+                    </div>
+                    <div class="col-lg-2 col-md-12 hvr-glow row-four bf">
+                        <img src="sass/img/task8-13.png">  
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="firstpage-bottom bf">
+            <div class="le4 cer">友情链接</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-3 col-sm-6 col-6 peo-line1">
+                        <ul class="bottom-ul">
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">手机软件
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-3 col-sm-6 col-6 peo-line2">
+                        <ul class="bottom-ul">
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">手机软件
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-3 col-sm-6 col-6 peo-line1">
+                        <ul class="bottom-ul">
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">手机软件
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-3 col-sm-6 col-6 peo-line2">
+                        <ul class="bottom-ul">
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">手机软件
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">教师招聘
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="demo1">找工作
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="firstpage-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 ">
+                    <div class="firstpage-footer-frist">
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    技能树 — 改变你我
+                                </a>
+                            </span>
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    关于我们
+                                </a>
+                                &ensp;|&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    联系我们
+                                </a>
+                                &ensp;|&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    合作企业
+                                </a>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 ">
+                    <div class="firstpage-footer-frist">
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    旗下网站
+                                </a>
+                            </span>
+                            <span>
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    草船云孵化器
+                                </a>
+                                </span>
+                                &ensp;&ensp;&ensp;&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    最强IT特训营
+                                </a>
+                            </span>
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    葡萄藤轻游戏
+                                </a>
+                                &ensp;&ensp;&ensp;&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    桌游精灵
+                                </a>
+                            </span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-12">
+                    <div class="firstpage-footer-end">
+                        微信公众平台
+                        <img src="sass/img/task8-14.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="le5 cer">Copyright © 2015技能树 www.jnshu.com  All Rights Reserved | 京ICP</div> 
+</body>
+</html>

@@ -1,0 +1,110 @@
+@import "mixin.scss";
+
+ body {
+    margin: 0;
+    padding: 0;
+}
+header {
+    @include wh($width,$height);
+    @include row($center,$center);
+    @include font($font*1.2,$color);
+    position: fixed;
+    top: 0;
+    background-color: $blue;
+    a {
+        position: absolute;
+        left: $left;
+        @include font($font*2,$color);
+        text-decoration: none;
+    }
+}
+main {
+    @include col($center,$f-s);
+    @include pdg($top*3,0,$bottom*5,0);
+    .main-bg {
+        @include row($center,$f-s);
+        @include wh($width,$height*4);
+        background: url(task12-1.png) no-repeat;
+        background-size: 140%;
+        img {
+            @include wh(6rem,$height*2);
+            @include mg($top,0,$bottom,$left);
+        }
+        ul{
+            @include pdg(0,0,0,1rem);
+            li {
+                @include font($font*.8,$color);
+                list-style: none;
+                img {
+                    @include wh(1rem,1.5rem);
+                    @include mg(0,0,0,0); 
+                }
+            } 
+        }
+    }
+    .main-list {
+        @include row($center,$f-s);
+        @include font($font,$black);
+        @include pdg($top,0,$bottom,0);
+        border-bottom: $bord $gray $solid; 
+        width: $width;
+        span {
+            color: $blue;
+        }
+    }
+    .main-list-one {
+        @extend .main-list;
+        width: 95%;
+        margin:0 auto;
+        img {
+            @include wh(1rem,1rem)
+        }
+    }
+    .main-list-two {
+        @extend .main-list-one;
+        @include font($font,$black);
+        span {
+            @include font($font,$gray);
+        }
+    }
+    .main-list-three {
+        @extend .main-list-one;
+        @include font($font,$red);
+        span {
+            @include font($font,$gray);
+        }
+    }
+    .main-list-four {
+        @extend .main-list-two;
+        span {
+            @include font($font,$gray);
+            width: 6rem;
+        }
+        .list-demo {
+            flex: 1;
+        }
+    }
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    @include row($center,$center);
+    @include wh($width,$height*1.5);
+    background-color: $color;
+    .ft-left {
+        @include row($center,$center);
+        @include wh($width*.4,$height);
+        @include font($font*1.2,$blue);
+        @include mg(auto,3%,auto,6%);
+        border: $bord $solid $blue;
+        border-radius: 0.3rem;
+    }
+    .ft-right {
+        @include row($center,$center);
+        @include mg(auto,6%,auto,3%);
+        @include wh($width*.4,$height);
+        @include font($font*1.2,$color);
+        border-radius: 0.3rem;
+        background-color: $blue;
+    }
+}

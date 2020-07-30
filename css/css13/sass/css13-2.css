@@ -1,0 +1,367 @@
+.g-bd {
+  background-color: #01bad8;
+}
+
+.g-hd {
+  position: fixed;
+  top: 0;
+  bottom: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  color: #fff;
+  padding-top: 0.5rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+  background-color: #01bad8;
+}
+
+.hd-btn-lf {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url("img/icon.png") no-repeat -0.1rem -11.2rem;
+  background-size: 25rem 50rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+.hd-btn-rgt {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url("img/icon.png") no-repeat 0 -13.7rem;
+  background-size: 25rem 50rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+.main-audio {
+  position: fixed;
+  top: 3rem;
+  bottom: auto;
+  width: 100%;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #01bad8;
+}
+
+.audio-opa {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.6;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.audio-content {
+  margin-top: 0;
+  margin-left: 3rem;
+  margin-bottom: 0;
+  margin-right: 0;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.audio-btn {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+  bottom: auto;
+  left: auto;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  background-color: #e0bb02;
+}
+
+.audio-ico {
+  width: 3rem;
+  height: 3rem;
+  background: url("img/icon.png") no-repeat 0.9rem -16.2rem;
+  background-size: 24rem 50rem;
+}
+
+audio {
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  width: 10rem;
+  height: 3rem;
+  opacity: 0;
+}
+
+.main-list {
+  position: fixed;
+  top: 6.49rem;
+  bottom: auto;
+  width: 100%;
+  height: 3.5rem;
+  background-color: #01bad8;
+}
+
+.list-ico {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 3rem;
+  width: 1rem;
+  height: 1rem;
+  background: url("img/icon.png") no-repeat 0 -22rem;
+  background-size: auto auto;
+}
+
+.list-content {
+  position: absolute;
+  top: 0.8rem;
+  right: auto;
+  bottom: auto;
+  left: 3.2rem;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.main-demo {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  padding-top: 9rem;
+  padding-bottom: 8rem;
+  padding-right: 0;
+  padding-left: 0;
+  z-index: -1;
+}
+
+.demo {
+  position: relative;
+  float: left;
+  text-align: center;
+  width: 21%;
+  height: auto;
+  margin-top: 5.7%;
+  margin-left: 5.7%;
+  margin-bottom: 5.7%;
+  margin-right: 5.7%;
+  border: 0.2rem solid #fff;
+}
+
+.demo-name {
+  font-size: 0.7rem;
+  color: black;
+  padding-top: 18%;
+  padding-bottom: 18%;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: #e0bb02;
+}
+
+.demo-mub {
+  font-size: 1rem;
+  color: #fff;
+  background-color: #0c5864;
+}
+
+.demo-ico {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: -4%;
+  width: 110%;
+  height: 40%;
+  padding-top: 0.8rem;
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0;
+  display: none;
+}
+
+.ico1 {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: -4%;
+  width: 24%;
+  height: 100%;
+  background: url("img/icon_1.png") no-repeat;
+  background-size: 100%;
+}
+
+.ico2 {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 23.5%;
+  width: 24%;
+  height: 100%;
+  background: url("img/icon_2.png") no-repeat;
+  background-size: 100%;
+}
+
+.ico3 {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 51.5%;
+  width: 24%;
+  height: 100%;
+  background: url("img/icon_3.png") no-repeat;
+  background-size: 100%;
+}
+
+.ico4 {
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: 79%;
+  width: 25%;
+  height: 100%;
+  background: url("img/icon_4.png") no-repeat;
+  background-size: 100%;
+}
+
+.demo:hover .demo-ico {
+  display: block;
+}
+
+@media screen and (max-width: 370px) {
+  .demo-mub {
+    font-size: 0.5rem;
+    color: #fff;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .demo {
+    margin-top: 5.3%;
+    margin-left: 5.3%;
+    margin-bottom: 5.3%;
+    margin-right: 5.3%;
+    border: 0.1rem solid #fff;
+  }
+  .audio-content {
+    font-size: 1rem;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 550px) {
+  .demo-name {
+    font-size: 1.3rem;
+    color: black;
+    padding-top: 18%;
+    padding-bottom: 18%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .demo {
+    margin-top: 5.3%;
+    margin-left: 5.3%;
+    margin-bottom: 5.3%;
+    margin-right: 5.3%;
+    border: 0.2rem solid #fff;
+  }
+  .audio-content {
+    font-size: 1rem;
+    color: black;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 700px) {
+  .demo-name {
+    font-size: 2rem;
+    color: black;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .demo {
+    margin-top: 5.3%;
+    margin-left: 5.3%;
+    margin-bottom: 5.3%;
+    margin-right: 5.3%;
+    border: 0.2rem solid #fff;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .demo-name {
+    font-size: 3rem;
+    color: black;
+    padding-top: 24%;
+    padding-bottom: 24%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .demo-mub {
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .audio-content {
+    font-size: 2rem;
+    color: black;
+  }
+  .list-content {
+    font-size: 2rem;
+    color: #fff;
+  }
+}
+
+.g-ft {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #01bad8;
+}
+
+.g-ft a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 5rem;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  font-size: 3rem;
+  color: #fff;
+  background-color: #e0bb02;
+}

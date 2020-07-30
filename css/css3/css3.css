@@ -1,0 +1,68 @@
+body{
+	  margin:0;
+	  color:#ffffff;
+	  background:#68cdd5;
+	  
+}
+
+
+.demo1{
+        margin:0 ;
+        padding-top:0.5rem;
+        padding-left:0.5rem;
+        height:4.5rem;
+        
+}
+.pic1{
+	  width:2rem;
+	  height:1.7rem;
+	 
+}
+.demo2{
+	
+	   height: 8rem;
+	   margin: 0 ;
+	   position: relative;
+	   padding-top:1.5rem;
+	   text-align:center;
+	
+}
+.pic2{
+	   width: 8rem;
+	   height: 3rem;
+
+}
+.demo3{
+	   margin:0;
+	   padding: 0;
+	   position: relative;
+	   width: 80%;
+	   left: 10%;
+	  
+	  
+}
+
+.demo4{
+	   margin:0;
+	   padding-top:9rem;
+	   padding-bottom:0;
+	   width: 80%;
+	  
+	   position: relative;
+	   left: 10%;
+	   right: 10%;
+	
+}
+.pic3{
+       width: 6rem;
+       height: 5rem;
+    
+
+}
+.pic4{
+       width:5rem;
+       height:5rem;
+       float: right;
+
+}
+
