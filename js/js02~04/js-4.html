@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/reset.css" type="text/css">
+    <link rel="stylesheet" href="sass/js-4.css" type="text/css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var clicks=sessionStorage.getItem("clicks");
+            var play=JSON.parse(sessionStorage.getItem("play"));
+            var arr=JSON.parse( sessionStorage.getItem("arr"));//提取字符串
+            console.log(arr);
+            $.each(arr,function(i,box){//遍历排列数组
+                var box1=$("<div></div>").addClass("div1");//创建上部分内容的子元素
+                var box2=$("<div></div>").addClass("div2");//创建下部分内容的子元素
+                box1.text(box);//设置内容
+                box2.text((i+1)+"号");//设置编号
+                var b=$("<div></div>").addClass("div").append(box1).append(box2);//创建元素并添加子元素
+                $(".main").append(b);//向父元素添加box元素
+                if(clicks>0){
+                $(".btn").html("返回");
+                $.each(play,function(x,y){
+                    $(".main").children(b).eq(y).find(box1).css("background","#077c38");
+                })
+                }   
+            })  
+            if(clicks>0&&clicks!=null){
+                $(".nav-ico").hide();
+                $(".btn").click(function(){
+                   location.href="js-5.html";  
+            })
+            }else{
+                $(".nav-ico").click(function(){
+                    window.location.href="js-3.html";
+                })
+                $(".btn").click(function(){
+                   location.href="js-5.html";  
+                })
+            }
+            $(".close").click(function(){
+                alert("要退出吗？");
+            })
+        })
+    </script>
+    <title>法官查看</title>
+</head>
+<body>
+    <!-- 导航条 -->
+    <nav class="m-nav">
+        <a class="nav-ico"></a>
+        法官日记
+        <div class="close"></div>
+    </nav>
+    <div class="main">  
+    </div>
+    <div class="btn">
+        开始游戏
+    </div>
+</body>
+</html>

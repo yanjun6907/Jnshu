@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/reset.css" type="text/css">
+    <link rel="stylesheet" href="sass/js-2.css" type="text/css">
+    <title>玩家配比</title>
+</head>
+<body>
+    <!-- 导航条 -->
+    <nav class="m-nav">
+        <a href="js-1.html" class="nav-ico"></a>
+    </nav>
+    <div class="list">玩家配比</div>
+    <div class="peo">
+        <span class="peo-a">
+            <img src="sass/img/09.png" alt="">
+            杀手 <span id="num1"></span> 人
+        </span>
+        <span class="peo-a">
+            <img src="sass/img/010.png" alt="">
+            平民 <span id="num2"></span> 人
+        </span>
+    </div>
+    <div class="list-more"></div>
+    <div class="num">
+        <span>
+            请输入玩家数量
+            <input type="number" class="input1" name="number" value="" id="num3"  oninput="nub1();if(value.length>2)value=value.slice(0,2)" >
+            <span class="list-cont">玩家数量为4-18</span>
+        </span>
+        <div class="sroll">
+            <input type="button" class="sro-lf" onclick="lf()">
+            <input type="range" name="sroll" id="range" min="4" max="18" oninput="nub()">
+            <input type="button" class="sro-rgt" onclick="rgt()">
+        </div>
+    </div>
+    <div class="btn" onclick="btn()">去洗牌</div>
+    <script src="js/js-2.js"></script>
+</body>
+</html>
