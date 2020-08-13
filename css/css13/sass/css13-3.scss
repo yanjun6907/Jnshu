@@ -1,0 +1,188 @@
+@import "mixin.scss";
+
+body {
+    background-color:$s-d;
+}
+aside{
+    @include abs(2.9rem,auto,0,-10.1rem);
+    @include wh(10rem,auto);
+    @include col(0,0);
+    background: $s-f;
+    border-left: $bord $s-blue;
+    transition: 0.3s ease-out;
+    z-index: 100;   
+}
+aside a {
+    @include font(1rem,$s-blue);
+    @include row(center,space-between);
+    @include pdg(0.5rem,1rem,0.5rem,1rem);
+    border-bottom: 0.06rem solid $s-a;
+}
+#sidemenu{
+    display:none;
+}
+#sidemenu:checked+aside{
+    left:0;
+}
+#sidemenu:checked~main{
+    margin-right:-10rem;
+    padding-left:10rem;
+  }
+.m-nav {
+    @include fixed(0,auto);
+    @include wh(100%,2.9rem);
+    background-color:$s-blue;
+}
+.m-nav label {
+    @include abs(0.2rem,auto,auto,0.3rem);
+    @include wh(2.5rem,2.5rem);
+    @include bg(25rem,50rem,0,.25rem);
+}
+.m-list {
+    position: relative;
+    @include mg(4rem,5%,0,5%);
+    @include pdg(1rem,0,1rem,0);
+    @include wh(90%,auto);
+    @include font(1rem,$s-a);
+    @include row(center,center);
+    border: 0.06rem solid $s-a;
+    background-color: $s-f;
+}
+.list-ico {
+    @include abs(0.5rem,0.5rem,auto,auto);
+    @include wh(1rem,2.5rem);
+    @include bg(15rem,40rem,0,-2rem);
+}
+.m-group {
+    position: relative;
+    @include mg(1rem,5%,0,5%);
+    @include wh(90%,auto);
+    @include font(0.8rem,$s-a);
+    @include col(center,0);
+    border: 0.06rem solid $s-a;
+    background-color: $s-f;
+}
+.m-group a {
+    @include wh(100%,auto);
+    @include row(center,center);
+}
+.group-top {
+    @include pdg(0.8rem,0,0.8rem,0);
+    @include wh(100%,auto);
+    @include font(1rem,$s-e);
+    text-align: center;
+    border-bottom: 0.06rem solid $s-e;
+}
+/* 设置容器大小*/
+.container {
+    position: relative;
+     @include wh(100%,17.5rem);
+     overflow: hidden;
+  }
+  /* 设置input位置 */
+.container input {
+    @include abs(auto,auto,0.2rem,auto);
+    z-index: 23;
+  }
+  /* 设置图片大小，透明度为0 */
+.wrap li {
+    opacity: 0;
+    position: absolute;
+    @include wh(100%,auto);
+    @include none;
+     text-align: center;
+  }
+  /* 默认选中第一张，根据选中的input，展示对应的图片 */
+#pic1:checked ~ .wrap li:nth-of-type(1),
+#pic2:checked ~ .wrap li:nth-of-type(2),
+#pic3:checked ~ .wrap li:nth-of-type(3),
+#pic4:checked ~ .wrap li:nth-of-type(4) {
+    opacity: 1;
+    animation: showImg linear 1s 1 0s normal;
+  }
+  /* 设置图片展示出来时候的动画 */
+@keyframes showImg {
+    0% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+.arrow {
+    position: absolute;
+    right: 4%;
+}
+.arrow label {
+      display: none;
+}
+.u-btn {
+    @include mg(0.7rem,auto,0.7rem,auto);
+    @include pdg(0.7rem,0,0.7rem,0);
+    @include wh(75%,auto);
+    @include font(1.2rem,$s-f);
+    @include none;
+	background-color: $s-blue;
+}
+.u-ico {
+    @include abs(7.3rem,3%,auto,auto);
+    @include wh(1.5rem,2.5rem);
+    @include bg(15rem,40rem,0,-4.7rem);
+    cursor: pointer;
+}
+  /* 根据选中的input设置需要展示哪个右边箭头 */
+  #pic1:checked ~ .arrow label:nth-of-type(2),
+  #pic2:checked ~ .arrow label:nth-of-type(3),
+  #pic3:checked ~ .arrow label:nth-of-type(4),
+  #pic4:checked ~ .arrow label:nth-of-type(1) {
+    display: block;
+  }
+.wrap {
+    @include abs(8.5rem,auto,auto,auto);
+    @include wh(100%,auto);
+    @include row(center,center);
+    transition:all 1s;
+}
+// // 原点切换
+input[ type="radio"] {
+    display: none;
+}
+input[name="pic"]+label::before {
+    content: "\a0"; /*不换行空格*/
+    @include abs(auto,auto,0.1rem,auto);
+    @include wh(0.6rem,0.6rem);
+    border-radius: 0.3rem;
+    background: $s-d;
+    cursor: pointer;
+}
+input[name="pic"]:checked+label::before {
+    content: "\a0"; /*不换行空格*/
+    @include abs(auto,auto,0.1rem,auto);
+    @include wh(0.6rem,0.6rem);
+    border-radius: 0.3rem;
+    background: $s-blue;
+    cursor: pointer;
+}
+.container label[for^="pic"]{
+    @include abs(auto,auto,0,auto);
+    @include wh(0.6rem,0.6rem);
+    border-radius: 0.3rem;
+    background: $s-f;
+    cursor: pointer;
+}
+.container label[for="pic1"]{
+    left: 44%;
+}
+.container label[for="pic2"]{
+    left: 48%;
+}
+.container label[for="pic3"]{
+    left: 52%;
+}
+.container label[for="pic4"]{
+    left: 56%;
+}
+

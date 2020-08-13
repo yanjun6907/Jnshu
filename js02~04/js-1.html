@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/reset.css" type="text/css">
+    <link rel="stylesheet" href="sass/js-1.css" type="text/css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(function(){
+            $(".but").click(function(){
+                window.location.href="js-2.html";
+            })
+            $(".a").click(function(){
+                window.location.href="js-2.html";
+            })
+        })
+    </script>
+    <title>首页</title>
+</head>
+<body>
+    <!-- 导航条 -->
+    <nav class="m-nav">
+        <label for="sidemenu"></label>
+    </nav>
+    <!-- 左侧边栏 -->
+    <input type="checkbox" id="sidemenu">
+    <aside>
+        <a href="#"><span><img src="sass/img/02.png">公告</span>&gt</a>
+        <a href="#"><span><img src="sass/img/03.png">设置</span>&gt</a>
+        <a href="#"><span><img src="sass/img/04.png">帮助</span>&gt</a>
+        <a href="#"><span><img src="sass/img/05.png">关于</span>&gt</a>
+    </aside>
+    <main>
+        <div class="m-list">
+            <a class="a">
+                上次游戏：杀人游戏简化版
+                <div class="list-ico">
+                </div>
+            </a>
+        </div>
+        <div class="m-group">
+            <!-- 点击轮播 -->
+            <div class="container">
+                    <input type="radio" id="pic1" name="pic" checked />
+                    <label for="pic1"></label>
+                    <input type="radio" id="pic2" name="pic" />
+                    <label for="pic2"></label>
+                    <ul class="wrap">
+                        <li>
+                            <div class="group-top"> 
+                                杀人游戏
+                            </div>
+                            <div class="one">
+                                    <button class="u-btn but">
+                                        简化版
+                                    </button>
+                                有1133个用户正在玩此款游戏
+                                    <button class="u-btn">
+                                        警版
+                                    </button>
+                                有1133个用户正在玩此款游戏
+                                    <button class="u-btn">
+                                        3.0版
+                                    </button>
+                                有1133个用户正在玩此款游戏
+                            </div>
+                        </li>
+                        <li>
+                            <div class="group-top"> 
+                                捉鬼游戏
+                            </div>
+                            <div class="one">
+                                <div>
+                                    <button class="u-btn2">
+                                        简化版
+                                    </button>
+                                    有1133个用户正在玩此款游戏
+                                </div>
+                                <div>  
+                                    <button class="u-btn2">
+                                        杀人版
+                                    </button>
+                                    有1133个用户正在玩此款游戏
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- 箭头切换 -->
+                    <div class="arrow rgt">
+                        <label for="pic1"><div class="u-ico1"></div></label>
+                        <label for="pic2"><div class="u-ico1"></div></label>
+                    </div>
+                    <div class="arrow lf">
+                        <label for="pic1"><div class="u-ico2"></div></label>
+                        <label for="pic2"><div class="u-ico2"></div></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sass/reset.css" type="text/css">
+    <link rel="stylesheet" href="sass/js-7.css" type="text/css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function(){
+            var arr=JSON.parse( sessionStorage.getItem("arr"));//提取字符串玩家数
+            var brr=JSON.parse( sessionStorage.getItem("brr"))//提取字符串玩家数
+            var day=sessionStorage.getItem("days")||1;//提取天数,默认为1
+            var clicks=sessionStorage.getItem("clicks");//获取点击数
+            var kill=JSON.parse(sessionStorage.getItem("kill"));//杀手总数
+            var killed=JSON.parse(sessionStorage.getItem("killed"))||[];//死亡杀手
+            var peo=JSON.parse(sessionStorage.getItem("peo"));//平民总数
+            var peoed=JSON.parse(sessionStorage.getItem("peoed"))||[];//死亡平民
+            var alldeath=JSON.parse(sessionStorage.getItem("alldeath"))||[];
+            var play=JSON.parse(sessionStorage.getItem("play"))||[];//提取死亡数组下标，默认为空
+                console.log("总数:"+arr);
+                console.log(brr);
+                console.log("死亡下标:"+play);
+                console.log(peoed,killed);
+                console.log(alldeath);
+                console.log("天数:"+day);
+                console.log("步骤点击数"+clicks);  
+            var m,n,d;//记录被选中当前对象下标与名称 
+            //遍历玩家数排序数组分布玩家头像
+            $.each(arr,function(i,box){
+                var a=$("<div></div>").addClass("div1");//创建上部分内容的子元素
+                var b=$("<div></div>").addClass("div2");//创建下部分内容的子元素
+                var c=$("<span></span>").addClass("div3");//创建杀人小图标
+                c.hide();//初始隐藏小图标
+                a.text(box);//设置内容
+                b.text((i+1)+"号");//设置编号
+                d=$("<div></div>").addClass("div").append(a).append(b).append(c);//创建元素并添加子元素
+                $(".main").append(d);//向父元素添加box元素 
+                d.on("click",function(){//绑定事件
+                    $(".main div").find("span").hide();//隐藏所有小图标
+                    $(this).find(c).show();//显示当前点击元素下小图标
+                    m=i;//获取当前点击元素下标
+                    n=$(this).find(a).text();//获取当前选中对象名称 
+                    console.log("当前点击盒子:"+m+n);   
+                })
+            }) 
+            //改变被杀玩家背景色 
+            $.each(play,function(i,val){
+            $(".main").children(d).eq(val).find(".div1").css("background","#077c38");  
+            })
+            //进入投票页修改标题
+            if(clicks%2==0){
+                $(".m-nav").text("投票").append(`<div class="close"></div>`);
+            }
+            //储存玩家当前状态属性
+            function saves(){
+            brr[m].state="dea";
+            if(brr[m].name=="杀手"){
+                killed.push(brr[m]);
+                alldeath.push(brr[m]);
+            }else{
+                peoed.push(brr[m]);
+                alldeath.push(brr[m]);
+            }
+            if(clicks%2==0){
+                brr[m].day=day-1;
+            }else{
+                brr[m].day=day;
+            }
+            sessionStorage.setItem("brr",JSON.stringify(brr)); 
+            sessionStorage.setItem("kill",JSON.stringify(kill)); 
+            sessionStorage.setItem("killed",JSON.stringify(killed)); 
+            sessionStorage.setItem("peo",JSON.stringify(peo)); 
+            sessionStorage.setItem("peoed",JSON.stringify(peoed));  
+            sessionStorage.setItem("alldeath",JSON.stringify(alldeath));  
+            }   
+            //判断游戏是否结束
+            var data;//记录杀手杀人页与投票页的状态
+            if(clicks%2==0){  
+                function gemeover() {
+                    if(kill.length==killed.length||(kill.length-killed.length)>=(peo.length-peoed.length)){
+                        data='day';
+                        sessionStorage.setItem('data',data);
+                        window.location.href="js-6.html";
+                    }
+                }
+            }else {
+                function gemeover() {
+                    if(kill.length==killed.length||(kill.length-killed.length)>=(peo.length-peoed.length)){
+                        data='night';
+                        sessionStorage.setItem('data',data);
+                        window.location.href="js-6.html";
+                    }
+                }
+            }
+            //点击跳转事件
+            $(".btn").click(function(){
+            //投票页面
+            if(clicks%2==0){    
+                if(brr[m].state=="live"){
+                    play.push(m);
+                    sessionStorage.setItem("play",JSON.stringify(play));
+                    sessionStorage.setItem("day",day); 
+                    window.location.href="js-5.html"; 
+                }else{
+                   return alert("此玩家over或重新选择");   
+                }   
+            }
+            //杀人页面
+            else {
+                if(n=="平民"&&brr[m].state=="live"){
+                    play.push(m);
+                    sessionStorage.setItem("play",JSON.stringify(play));
+                    sessionStorage.setItem("day",day); 
+                    window.location.href="js-5.html"; 
+                }else if(n=="杀手"&&brr[m].state=="live") {
+                   return alert("请不要自杀哦！");
+                }else {
+                   return alert("此玩家over或重新选择");
+                }
+            }
+            saves(); 
+            gemeover();  
+            }) 
+            //加段音频
+            if(clicks==1){
+                $(".cont1").append(` <audio src="caifuziyou.mp3" autoplay="autoplay"  controls="controls" ></audio>`);
+                $(".cont1").append(`<img src="sass/img/025.png">`);
+            }else{
+                $(".cont1").append(` <audio src="caifuziyou.mp3" controls="controls" ></audio>`);
+                $(".cont1").append(`<img src="sass/img/025.png">`);
+            }
+        })
+    </script>
+    <title>杀手杀人</title>
+</head>
+<body>
+    <!-- 导航条 -->
+    <nav class="m-nav">
+        杀手杀人
+        <div class="close"></div>
+    </nav>
+    <div class="cont1">
+        杀手请睁眼，杀手请选择要杀的对象
+    </div>
+    <div class="cont2">
+        <div class="ico"></div>
+        点击下方玩家头像，对被杀的玩家进行标记
+    </div> 
+    <div class="main">    
+    </div>
+    <div class="btn">
+        确定
+    </div>
+</body>
+</html>

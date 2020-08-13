@@ -1,0 +1,67 @@
+$blue: #68cdd5;
+$black: black;
+$gray: #bdbdbd;
+$red: red;
+$blue-s: #63a5ae;
+$color: #fff;
+$gray-s: #e5ebec;
+$top: 1rem;
+$right: 1rem;
+$bottom: 1rem;
+$left: 1rem;
+$center: center;
+$f-s: flex-start;
+$f-e: flex-end;
+$s-a: space-around;
+$s-b: space-between;
+$height: 3rem;
+$width: 100%;
+$font: 1rem;
+$bord: 0.05rem;
+$solid: solid;
+@mixin pdg($top,$right,$bottom,$left) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+    padding-right: $right;
+    padding-left: $left;
+}
+@mixin mg($top,$right,$bottom,$left) {
+    margin-top: $top;
+    margin-left: $left;
+    margin-bottom: $bottom;
+    margin-right: $right;
+}
+@mixin wh($width,$height) {
+    width: $width;
+    height: $height;
+}
+@mixin font($font,$black) {
+    font-size: $font;
+    color: $black;
+}
+@mixin row($center,$f-s) {
+    display: flex;
+    align-items: $center;
+    justify-content: $f-s;
+}
+@mixin col($center,$f-s) {
+    display: flex;
+    flex-direction: column;
+    align-items: $center;
+    justify-content: $f-s;
+}
+@mixin none {
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none; 
+}
+@mixin overflow {
+    overflow:hidden;/* 超出宽度部分的隐藏*/
+    white-space:nowrap; /*文字不换行*/
+    text-overflow:ellipsis; /*超出则...代替*/
+}
+@mixin back($x,$y) {
+    background: url("icon.png") no-repeat;
+    background-position: $x $y;
+}

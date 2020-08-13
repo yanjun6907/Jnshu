@@ -1,0 +1,21 @@
+  
+   body{
+   	    margin:0;
+   }
+
+  .box{
+  	    padding: 0;
+  	    margin: 0;
+
+  }
+  .div{
+  	     position: relative;
+   	     margin:1%;
+         width:5%;
+         padding:13%;
+         float:left;
+   	    background-color:#a55ab2;
+   	     border-radius:7%;
+
+  }
+  

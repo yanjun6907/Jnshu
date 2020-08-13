@@ -1,0 +1,72 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+	color: #ffffff;
+	background-color: #f2f2f2;
+}
+header {
+	background-color: #68cdd5;
+    font-weight: bold;
+	text-align: center;
+	position: fixed;
+    top: 0;
+    width: 100%;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	line-height: 16px;
+}
+a {
+    color: #68cdd5 ;
+	font-size: 14px;
+}
+img {
+	height: 45px;
+    width: 55px;
+	float: left;
+}
+input {
+    color: black;  
+    border: 0;
+    margin: 14px;
+    height: 16px;
+    width: 30%; 
+    outline: none;
+    /*焦点时不显示外边框*/
+ }
+input::placeholder {
+ 	color:#e2e2e2
+}
+.span1 {   
+	position: absolute;
+	left: 12px;
+}
+.span2 {   
+    position: absolute;
+    right: 12px;      
+}
+.form1 {
+	margin-top: 52px;
+	margin-bottom: 8px;
+	background-color: #ffffff;	   
+}
+.form2 {
+	margin-top: 0;
+	margin-bottom: 8px;
+	background-color: #ffffff;	  
+}
+.div1 {
+	background-color: #68cdd5;
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+.div2 {
+	padding: 10px;
+	float: right;
+ }
+
+
+  

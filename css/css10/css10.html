@@ -1,0 +1,274 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+<meta charset="UTF-8">     
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">     
+<link rel="stylesheet" href="css10.css">     
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+	<title>流程表单</title>
+</head>
+<body>
+	<header>
+		<div class="topnav">
+	        <div class="container">
+	    	    <div class="row">
+		            <div class="col-6 topnav-left">
+			            客服电话：&nbsp;<a href="#">400-810-9151</a>
+		            </div>
+		            <div class="col-6 topnav-right">
+		                <ul>
+			                <li><a href="#">登录</a></li>
+		                    <li><a href="#">注册</a></li>
+		                </ul>
+		            </div>
+		        </div>
+	        </div>
+	    </div>
+	    <div class="mainnav">
+	        <div class="container">
+	            <div class="row">
+	                <nav class="col-12 navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="#">
+            	            <span class="navbar-brand-logo">
+            	                51包装
+            	                <span class="navbar-brand-content">
+            	                    www.51baozhuang.com
+            	                </span>
+                            </span>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link nav-pills nav-btn" href="#">首页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-pills nav-btn-other" href="#">在线定制</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle nav-pills nav-btn" href="#" id="navbarDropdownMenuLink"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        标准箱
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item nav-btn" href="#">对口箱</a>
+                                        <a class="dropdown-item nav-btn" href="#">飞机盒</a>
+                                        <a class="dropdown-item nav-btn" href="#">天地盖</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-pills nav-btn" href="#">关于我们</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<main>
+		    <!-- 流程图 -->
+	    <div class="container">
+            <div class="row justify-content-end">
+                <div class="col-md-6 col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-3 col-6 main-guide">
+                        	<div>
+                        		<div class="guide-bar-other"></div>
+                        		<div class="guide-radius-other">1</div>
+                        	</div>
+                        	<div class="guide-msg-other">1.定制纸箱</div>
+                        </div>
+                        <div class="col-sm-3 col-6 main-guide">
+                        	<div>
+                        		<div class="guide-bar"></div>
+                        		<div class="guide-radius">2</div>
+                        	</div>
+                        	<div class="guide-msg">2.选择数量</div>
+                        </div>
+                        <div class="col-sm-3 col-6 main-guide">
+                        	<div>
+                        		<div class="guide-bar"></div>
+                        		<div class="guide-radius">3</div>
+                        	</div>
+                        	<div class="guide-msg">3.上传附件</div>
+                        </div>
+                        <div class="col-sm-3 col-6 main-guide">
+                        	<div>
+                        		<div class="guide-bar"></div>
+                        		<div class="guide-radius">4</div>
+                        	</div>
+                        	<div class="guide-msg">4.确认下单</div>
+                        </div>
+                    </div>
+                </div>
+	    	</div>
+        </div>
+        <!-- 表单栏 -->
+        <div class="container">
+        	<div class="row">
+        	    <div class="col-12 main-list">
+        	        <span class="main-list-note">
+        	            |
+        	        </span>
+        	        <span class="main-list-title">
+        	            请您按照以下步骤来定制您的纸箱
+        	        </span>
+        	    </div>
+        	</div>
+        	<div class="row border">
+        		<div class="col-md-12 main-fm">
+        		    <img src="task10-2.png" alt="">
+        	        <span>选择箱型</span>
+        	    </div>
+        	    <form action="form_action.asp" class="col-md-6 fm-input">
+        	    	<div class="row">
+        	            <div class="col-md-12 input-frist">
+        	    	        <input type="radio" name="frist" id="f1" checked="checked">
+        	    	            <label for="f1">对口箱</label>
+        	    	        <input type="radio" name="frist" id="f2">
+        	    	            <label for="f2">飞机盒</label>
+        	    	        <input type="radio" name="frist" id="f3">
+        	    	            <label for="f3">天地盖</label>
+        	    	    </div>
+                    </div>
+        	    </form>
+        	    <div class="col-md-6 fm-select">
+        	        <div class="select">	
+        	            <select>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 main-fm">
+        		    <img src="task10-3.png" alt="">
+        	        <span>确定尺寸</span>
+        	    </div>
+        	    <form action="form_action.asp" class="col-md-9">
+        	    	<div class="row">
+        	            <div class="col-md-12 col-sm-6 input-second">
+        	    	        <input type="radio" name="second" id="m1" checked="checked">
+        	    	            <label for="m1">外径</label>
+        	    	        <label>长<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	        <label>宽<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	        <label>高<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	    </div>
+        	    	    <div class="col-md-12 col-sm-6 input-three">
+        	    	        <input type="radio" name="second" id="m2">
+        	    	            <label for="m2">内径</label>
+        	    	        <label>长<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	        <label>宽<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	        <label>高<input type="text" name="second" maxlength="5" class="label-input">mm</label>
+        	    	    </div>
+                    </div>
+        	    </form>
+        	    <div class="col-md-3 fm-select">
+        	        <div class="select">	
+        	            <select>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                        </select>
+                    </div>
+                </div>
+                	<div class="col-md-12 main-fm">
+        		    <img src="task10-4.png" alt="">
+        	        <span>选择材质</span>
+        	    </div>
+        	    <form action="form_action.asp" class="col-md-10 fm-input">
+        	    	<div class="row">
+        	            <div class="col-md-12 input-four">
+        	    	        <input type="radio" name="three" id="g1" checked="checked">
+        	    	            <label for="g1">三层A瓦优质</label>
+        	    	       <input type="radio" name="three" id="g2">
+        	    	            <label for="g2">三层B瓦优质</label>
+        	    	        <input type="radio" name="three" id="g3">
+        	    	            <label for="g3">三层C瓦优质</label>
+        	    	        <input type="radio" name="three" id="g4">
+        	    	            <label for="g4">三层D瓦优质</label>
+        	    	        <input type="radio" name="three" id="g5">
+        	    	            <label for="g5">三层E瓦优质</label>
+        	    	    </div>
+                    </div>
+        	    </form>
+        	    <div class="col-md-2 fm-select">
+        	        <div class="select">	
+        	            <select>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                            <option>查看详情</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12  main-next">
+                	<a class="nav-pills" href="#">下一步</a>
+                </div>
+            </div>
+        </div>
+	</main>
+	<footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 footer-list">
+                        <div class="footer-left">
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    51包装网——纸箱包装首选服务平台
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-list">
+                        <div class="footer-center">
+                        	<span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    关于我们
+                                </a>               
+                                &ensp;&ensp;&ensp;&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    配送流程
+                                </a> 
+                                &ensp;&ensp;&ensp;&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    联系我们
+                                </a>
+                            </span>
+                            <span>
+                                <a href="javascript:void(0);" class="demo1">
+                                    下单指南
+                                </a>
+                                &ensp;&ensp;&ensp;&ensp;
+                                <a href="javascript:void(0);" class="demo1">
+                                    媒体介绍
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 footer-list">
+                        <div class="footer-right">
+                            <div class="footer-right-content">
+                            	<div>TEL：<a href="javascript:void(0);" class="demo1">400-0000-000</a></div>
+                            	<div>企业QQ：<a href="javascript:void(0);" class="demo1">123456789</a></div>
+                            	<div>微信号：<a href="javascript:void(0);" class="demo1">XXXXXXX</a></div>
+                            </div>
+                            <img src="task10-1.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="copyright">北京五一包装科技有限公司Copyright ©2015 &ensp;&ensp;&ensp;51baozhuang.com015   All rights reserved.   京icp备99999999-1</div>
+	</footer>
+
+
+<div class="div"></div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
